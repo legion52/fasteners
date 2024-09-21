@@ -1,12 +1,39 @@
-.container {}
+.container {
+    height: 700px;
+    overflow: hidden;
+    background-position: center top;
+
+    transition: height 0.5s ease-in-out;
+
+}
+
+.containerOpen {
+    height: 400px;
+    transition: height 0.5s ease-in-out;
+    background-position: center bottom;
+}
 
 .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 92px;
-    gap: 140px;
+    gap: 7vw;
     flex-direction: row;
+}
+
+.logoBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoBlock span {
+    display: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
 }
 
 .logo {
@@ -21,14 +48,19 @@
 .logo {
     width: 150px;
     height: 34px;
-    color: white; /* Начальный цвет */
+    color: white;
+    /* Начальный цвет */
     transition: color 0.3s ease;
 }
 
 .logo:hover {
-    color: #ecf3ab; /* Цвет при наведении */
+    color: #ecf3ab;
+    /* Цвет при наведении */
 }
 
+.logoMenu {
+    display: none;
+}
 
 .menu {
     display: flex;
@@ -41,6 +73,14 @@
     font-size: 18px;
     font-weight: bold;
     color: white;
+
+    -webkit-user-select: none;
+    /* Для Safari и старых версий Chrome */
+    -moz-user-select: none;
+    /* Для старых версий Firefox */
+    -ms-user-select: none;
+    /* Для старых версий Internet Explorer */
+    user-select: none;
 }
 
 .menu span:hover {
@@ -50,12 +90,26 @@
 }
 
 
-@media (max-width: 1024px) {
-    .container {
+@media (max-width: 1130px) {
+    .navbar {
         flex-direction: column;
         align-items: center;
         padding-top: 60px;
         gap: 20px;
+    }
+
+    .logoBlock {
+        width: 80%;
+    }
+
+    .logoBlock span {
+        display: block;
+    }
+
+    .container {
+        height: 400px;
+
+
     }
 
     .menu {
@@ -68,24 +122,43 @@
 }
 
 @media (max-width: 768px) {
-    .container {
+    .navbar {
         padding-top: 40px;
     }
 
     .menu {
         gap: 15px;
-        flex-direction: column;
+        /* flex-direction: column; */
+        font-size: 14px;
         align-items: center;
     }
+
 
     .menu span {
         font-size: 14px;
     }
 }
 
-@media (max-width: 480px) {
-    .container {
+@media (max-width: 640px) {
+    .navbar {
         padding-top: 20px;
+    }
+
+    .container {
+        height: 72px;
+
+    }
+
+    .logoBlock span {
+        display: none;
+    }
+
+    .logoMenu {
+        display: block;
+    }
+
+    .logo {
+        width: 90px;
     }
 
     .menu {
