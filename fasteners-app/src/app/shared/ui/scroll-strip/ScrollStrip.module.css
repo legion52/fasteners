@@ -1,0 +1,29 @@
+.svgScrollContainer {
+    overflow: hidden;
+    width: 120%; /* Окно прокрутки */
+    height: 627px; /* Высота контейнера соответствует высоте изображения */
+    position: relative;
+    transform: rotate(-30deg); /* Угол наклона */
+}
+
+.scrollingPng {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    width: calc(837px * 4); /* Общая ширина для 3 изображений по 837px */
+}
+
+.image {
+    height: 100%; /* Изображение занимает всю высоту контейнера */
+    width: 837px; /* Ширина изображения фиксирована */
+    margin-right: 10px; /* Расстояние между изображениями */
+    
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-835px); /* Прокручиваем на ширину одного изображения */
+    }
+}
