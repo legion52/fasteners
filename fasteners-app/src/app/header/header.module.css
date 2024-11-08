@@ -1,9 +1,19 @@
 .container {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    background: rgb(13,48,74);
+    background: linear-gradient(153deg, rgba(13,48,74,1) 0%, rgba(17,33,32,1) 98%);
+    /* align-items: center; */
+    padding: 0 100px 0 100px;
+
     width: 100%;
-    height: 350px;
-    background-color: #3289C8;
-    clip-path: ellipse(75% 100% at 49% 0%);
+    height: 950px;
+    /* background-color: #3289C8; */
+    /* background-color: #22567B; */
+    /* clip-path: ellipse(75% 100% at 49% 0%); */
+    /* clip-path: polygon(0% 0%, 100% 0, 100% 78%, 50% 100%, 0 78%); */
+    clip-path: polygon(0 0, 100% 0%, 100% 95%, 50% 100%, 0 95%);
 }
 
 
@@ -20,7 +30,7 @@
 
 .navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding-top: 92px;
     gap: 7vw;
@@ -42,21 +52,19 @@
 }
 
 .logo {
+    /* width: 180px; */
+    /* height: 40px; */
     width: 150px;
-    height: 34px;
+    height: 35px;
     fill: white;
     cursor: pointer;
+    color: white;
+    /* Начальный цвет */
+    transition: color 0.3s ease;
 
     /* Цвет заливки SVG */
 }
 
-.logo {
-    width: 150px;
-    height: 34px;
-    color: white;
-    /* Начальный цвет */
-    transition: color 0.3s ease;
-}
 
 .logo:hover {
     color: #ecf3ab;
@@ -71,6 +79,7 @@
     display: flex;
     gap: 34px;
     flex-wrap: wrap;
+    z-index: 10;
 }
 
 .menu span {
@@ -78,20 +87,84 @@
     font-size: 18px;
     font-weight: bold;
     color: white;
-
+    font-family: 'PT Sans', sans-serif;
     -webkit-user-select: none;
-    /* Для Safari и старых версий Chrome */
     -moz-user-select: none;
-    /* Для старых версий Firefox */
     -ms-user-select: none;
-    /* Для старых версий Internet Explorer */
     user-select: none;
+    position: relative;
+    padding-bottom: 5px;
 }
 
+/* Временный класс, нужно удалить */
+.menu span:first-child::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 100%; /* Ширина подчеркивания, можно подогнать под нужный размер */
+    height: 2px; /* Высота подчеркивания */
+    background-color: #ffffff; 
+    border-radius: 2px; /* Закругление краев */
+    transition: width 0.3s ease; /* Анимация при наведении */
+}
+
+.menu span::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 0%; /* Ширина подчеркивания, можно подогнать под нужный размер */
+    height: 2px; /* Высота подчеркивания */
+    background-color: #ffffff; 
+    border-radius: 2px; /* Закругление краев */
+    transition: width 0.3s ease; /* Анимация при наведении */
+}
+
+.menu span:hover::after {
+    width: 100%; /* Увеличение ширины подчеркивания при наведении */
+    background-color: #56c6d7; 
+}
+
+
 .menu span:hover {
-    color: #FFD700;
+    /* color: #FFD700; */
     /* Яркий желтый */
     transition: color 0.3s ease;
 }
 
+.contact span {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
 
+
+.heroText {
+    width: 700px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+}
+
+.heroText h1 {
+    color: white;
+    font-size: 44px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.heroText span {
+    color: #c3c3c3;
+    font-size: 25px;
+    font-family: 'PT Sans', sans-serif;
+    /* font-weight: ; */
+}
+
+.headlineSection{
+    width: 400px;
+}

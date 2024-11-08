@@ -1,0 +1,27 @@
+.categorySwitcher {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.categoryButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #215881; /* Основной цвет текста */
+    border: 2px solid #215881; /* Основной цвет границы */
+    border-radius: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.categoryButton:hover {
+    background-color: #e5f7f6; /* Лёгкий фон при наведении */
+}
+
+.active {
+    background-color: #215881; /* Основной цвет для активной кнопки */
+    color: #ffffff; /* Цвет текста для активной кнопки */
+}

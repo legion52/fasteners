@@ -1,0 +1,64 @@
+.contactsSection {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.sectionTitle {
+    font-size: 32px;
+    font-weight: bold;
+    color: #215881;
+    margin-bottom: 20px;
+}
+
+.sectionDescription {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.contactInfo {
+    font-size: 16px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contactForm input,
+.contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.contactForm textarea {
+    resize: vertical;
+}
+
+.submitButton {
+    background-color: #215881;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+    background-color: #194a6b;
+}
+
+.mapContainer {
+    margin-top: 40px;
+}

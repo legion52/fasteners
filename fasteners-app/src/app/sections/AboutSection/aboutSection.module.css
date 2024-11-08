@@ -1,0 +1,91 @@
+/* Общая секция "О компании" */
+.aboutSectionWrapper {
+    padding: 60px 20px; /* Верхний и нижний отступы */
+}
+
+.aboutSectionTitle {
+    font-size: 70px;
+    font-weight: bold;
+    color: #215881; /* Основной цвет */
+    margin-bottom: 24px;
+    text-align: center; /* Или left, если стиль позволяет */
+}
+
+.aboutInfoSection {
+    display: flex;
+    align-items: center;
+}
+
+.aboutCompanyDescription {
+    font-size: 25px;
+    line-height: 1.6;
+    border-radius: 20px;
+    padding-top: 30px;
+    color: #333; /* Тёмно-серый */
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.aboutKeyPoints {
+    font-weight: bold;
+    color: #215881;
+}
+
+.aboutImageContainer {
+    float: right;
+    margin-left: 20px;
+}
+
+/* Блок с направлениями */
+.directionsSection {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.directionsTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #215881;
+}
+
+.directionsGrid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.directionCard {
+    cursor: pointer;
+    background-color: #e5f7f6;
+    padding: 20px;
+    width: 200px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.directionCard:hover{
+    box-shadow: -1px 9px 12px -11px rgba(0,0,0,0.75);
+-webkit-box-shadow: -1px 9px 12px -11px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 9px 12px -11px rgba(0,0,0,0.75);
+}
+
+.directionIcon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.directionCardTitle {
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.directionCardDescription {
+    font-size: 14px;
+    color: #666;
+}
