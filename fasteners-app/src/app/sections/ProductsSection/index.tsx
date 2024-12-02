@@ -1,72 +1,52 @@
-'use client'
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import styles from './productsSection.module.css';
-import imageSrc from '../../shared/assets/image.png';
 import Image from 'next/image';
 import CategorySwitcher from '@/app/shared/ui/CategorySwitcher';
+
 const ProductsSection = () => {
-    const categories = [
-        "Винты", 
-        "Винты самонарезающие", 
-        "Винты сигментные",
-        "Болты",
-        "Оси",
-    ];
-    const products = [
+    const categories = ["Винты", "Винты самонарезающие", "Винты сегментные", "Болты", "Оси"];
+
+    const initialProducts = [
         {
             id: 1,
             name: "Винт сегментный",
             description: "Сегментные винты высокого качества.",
-            image: "../../shared/assets/image.png",
+            image: "/images/productsImage/product1.jpg",
         },
         {
             id: 2,
             name: "Винт самонарезающий",
             description: "Самонарезающие винты для различных материалов.",
-            image: "/images/products/screw.png",
+            image: "/images/productsImage/product2.jpg",
         },
         {
             id: 3,
             name: "Винт самонарезающий",
             description: "Самонарезающие винты для различных материалов.",
-            image: "/images/products/screw.png",
+            image: "/images/productsImage/product3.jpg",
         },
         {
             id: 4,
             name: "Винт самонарезающий",
             description: "Самонарезающие винты для различных материалов.",
-            image: "/images/products/screw.png",
+            image: "/images/productsImage/product4.jpg",
         },
         {
             id: 5,
-            name: "Винт сегментный",
-            description: "Сегментные винты высокого качества.",
-            image: "../../shared/assets/image.png",
-        },
-        {
-            id: 6,
             name: "Винт самонарезающий",
             description: "Самонарезающие винты для различных материалов.",
-            image: "/images/products/screw.png",
+            image: "/images/productsImage/product5.jpg",
         },
-        {
-            id: 7,
-            name: "Винт самонарезающий",
-            description: "Самонарезающие винты для различных материалов.",
-            image: "/images/products/screw.png",
-        },
-        {
-            id: 8,
-            name: "Винт самонарезающий",
-            description: "Самонарезающие винты для различных материалов.",
-            image: "/images/products/screw.png",
-        },
-        // Добавьте остальные товары
     ];
 
+    const [products, setProducts] = useState(initialProducts);
+
     const handleCategoryChange = (category: string) => {
-        console.log(`Выбранная категория: ${category}`);
-        // Здесь можно добавить логику для загрузки товаров по выбранной категории
+        // Перемешиваем продукты
+        const shuffledProducts = [...products].sort(() => Math.random() - 0.5);
+        setProducts(shuffledProducts);
+
     };
 
     return (
@@ -77,7 +57,16 @@ const ProductsSection = () => {
             <div className={styles.productsGrid}>
                 {products.map((product) => (
                     <div key={product.id} className={styles.productCard}>
-                        <Image src={imageSrc} alt={product.name} className={styles.productImage} />
+                        <Image
+                            src={product.image}
+                            alt={product.name}
+                            className={styles.productImage}
+                            width={200}
+                            height={200}
+                            quality={100}
+                            unoptimized
+                            style={{ objectFit: 'cover' }}
+                        />
                         <h3 className={styles.productName}>{product.name}</h3>
                         <p className={styles.productDescription}>{product.description}</p>
                     </div>

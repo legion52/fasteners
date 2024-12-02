@@ -6,11 +6,13 @@ import ProductsSection from "./sections/ProductsSection";
 import PartnersSection from "./sections/PartnersSection";
 import Footer from "./sections/Footer";
 import ContactsSection from "./sections/ContactsSection";
+import StockWidget from "./widgets/StockWidget";
 
 export default function Home() {
   return (
     <main className={styles.main}>
    <Header/>
+   {/* <StockWidget /> */}
    <AboutSection/>
    <ProductsSection/>
    <ContactsSection/>

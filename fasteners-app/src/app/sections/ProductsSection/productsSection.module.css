@@ -1,8 +1,7 @@
 .productsSection {
-    padding: 0 100px 0 100px;
+    padding: 0 100px;
     text-align: center;
     margin-top: 100px;
-
 }
 
 .sectionTitle {
@@ -23,28 +22,6 @@
     gap: 20px;
     grid-template-columns: repeat(4, 1fr); /* 4 столбца по умолчанию */
 }
-
-/* Адаптация для экранов средней ширины (например, планшеты) */
-@media (max-width: 1200px) {
-    .productsGrid {
-        grid-template-columns: repeat(3, 1fr); /* 3 столбца */
-    }
-}
-
-/* Адаптация для маленьких экранов (например, мобильные устройства) */
-@media (max-width: 768px) {
-    .productsGrid {
-        grid-template-columns: repeat(2, 1fr); /* 2 столбца */
-    }
-}
-
-/* Адаптация для очень узких экранов */
-@media (max-width: 480px) {
-    .productsGrid {
-        grid-template-columns: 1fr; /* 1 столбец */
-    }
-}
-
 
 .productCard {
     background-color: #f9f9f9;
@@ -77,4 +54,88 @@
 .productDescription {
     font-size: 14px;
     color: #666;
+}
+
+/* Адаптивные стили */
+
+/* Большие экраны (от 1200px) */
+@media (min-width: 1200px) {
+    .productsSection {
+        padding: 0 100px;
+    }
+
+    .sectionTitle {
+        font-size: 70px;
+    }
+}
+
+/* Средние экраны (от 769px до 1199px) */
+@media (max-width: 1199px) and (min-width: 769px) {
+    .productsSection {
+        padding: 0 50px;
+    }
+
+    .sectionTitle {
+        font-size: 50px;
+    }
+
+    .productsGrid {
+        grid-template-columns: repeat(3, 1fr); /* 3 столбца */
+    }
+}
+
+/* Малые экраны (до 768px) */
+@media (max-width: 768px) {
+    .productsSection {
+        padding: 0 20px;
+        margin-top: 50px;
+    }
+
+    .sectionTitle {
+        font-size: 40px;
+    }
+
+    .sectionDescription {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .productsGrid {
+        grid-template-columns: repeat(2, 1fr); /* 2 столбца */
+    }
+
+    .productCard {
+        padding: 15px;
+    }
+
+    .productName {
+        font-size: 16px;
+    }
+
+    .productDescription {
+        font-size: 12px;
+    }
+}
+
+/* Очень малые экраны (до 480px) */
+@media (max-width: 480px) {
+    .sectionTitle {
+        font-size: 32px;
+    }
+
+    .productsGrid {
+        grid-template-columns: repeat(2, 1fr); /* 2 столбца */
+    }
+
+    .productCard {
+        padding: 10px;
+    }
+
+    .productName {
+        font-size: 14px;
+    }
+
+    .productDescription {
+        font-size: 12px;
+    }
 }

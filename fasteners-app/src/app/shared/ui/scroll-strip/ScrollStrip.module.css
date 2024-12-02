@@ -1,32 +1,72 @@
+/* Размеры */
 .svgScrollContainer {
     left: 25%;
-    top: 250px;
+    top: 195px;
     overflow: hidden;
-    width: 150%; /* Увеличьте ширину */
-    height: 900px; /* Увеличьте высоту */
+    width: 150%;
+    height: 900px;
     position: absolute;
-    transform: rotate(-40deg);
-}
-
-
-.scrollingPng {
+    transform: rotate(-31deg);
+  }
+  
+  .svgScrollContainerRight {
+    left: 25%;
+    top: 700px;
+    overflow: hidden;
+    width: 150%;
+    height: 900px;
+    position: absolute;
+    transform: rotate(-31deg);
+  }
+  
+  .scrollingPng {
     display: flex;
-    animation: scroll 20s linear infinite;
-    width: calc(837px * 5); /* Общая ширина для 3 изображений по 837px */
-}
-
-.image {
-    height: 100%; /* Изображение занимает всю высоту контейнера */
-    width: 837px; /* Ширина изображения фиксирована */
-    margin-right: 10px; /* Расстояние между изображениями */
-    
-}
-
-@keyframes scroll {
+    width: 8470px; /* 847px (изображение + отступ) * 10 изображений */
+  }
+  
+  .scrollLeft {
+    animation: scroll-left 50s linear infinite;
+  }
+  
+  .scrollRight {
+    animation: scroll-right 320s linear infinite;
+    transform: translateX(-4235px); /* Начальный сдвиг для бесшовной прокрутки */
+  }
+  
+  .image {
+    height: 100%;
+    width: 837px;
+    margin-right: 10px;
+    user-select: none;
+  }
+  
+  /* Кадры для прокрутки влево */
+  @keyframes scroll-left {
     0% {
-        transform: translateX(0);
+      transform: translateX(0);
     }
     100% {
-        transform: translateX(-835px); /* Прокручиваем на ширину одного изображения */
+      transform: translateX(-4235px); /* 847px * 5 изображений */
     }
-}
+  }
+  
+  /* Кадры для прокрутки вправо */
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(-4235px); /* Начинаем с -4235px */
+    }
+    100% {
+      transform: translateX(0); /* Заканчиваем в 0 */
+    }
+  }
+  
+
+  @media (max-width: 768px) {
+    .svgScrollContainer{
+      top: 500px;
+    }
+
+    .svgScrollContainerRight{
+      top: 1000px;
+    }
+  }

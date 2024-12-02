@@ -1,19 +1,21 @@
 /* Общая секция "О компании" */
 .aboutSectionWrapper {
-    padding: 60px 20px; /* Верхний и нижний отступы */
+    padding: 60px 20px;
 }
 
 .aboutSectionTitle {
     font-size: 70px;
     font-weight: bold;
-    color: #215881; /* Основной цвет */
+    color: #215881;
     margin-bottom: 24px;
-    text-align: center; /* Или left, если стиль позволяет */
+    text-align: center;
 }
 
 .aboutInfoSection {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .aboutCompanyDescription {
@@ -21,20 +23,23 @@
     line-height: 1.6;
     border-radius: 20px;
     padding-top: 30px;
-    color: #333; /* Тёмно-серый */
+    color: #333;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 20px;
     text-align: justify;
-}
-
-.aboutKeyPoints {
-    font-weight: bold;
-    color: #215881;
+    flex: 1;
 }
 
 .aboutImageContainer {
-    float: right;
     margin-left: 20px;
+    margin-top: 20px;
+    flex: 1;
+}
+
+.aboutImageContainer img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
 }
 
 /* Блок с направлениями */
@@ -68,10 +73,10 @@
     transition: all 0.3s ease;
 }
 
-.directionCard:hover{
-    box-shadow: -1px 9px 12px -11px rgba(0,0,0,0.75);
--webkit-box-shadow: -1px 9px 12px -11px rgba(0,0,0,0.75);
--moz-box-shadow: -1px 9px 12px -11px rgba(0,0,0,0.75);
+.directionCard:hover {
+    box-shadow: -1px 9px 12px -11px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 9px 12px -11px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 9px 12px -11px rgba(0, 0, 0, 0.75);
 }
 
 .directionIcon {
@@ -88,4 +93,76 @@
 .directionCardDescription {
     font-size: 14px;
     color: #666;
+}
+
+/* Адаптивные стили */
+
+/* Большие экраны */
+@media (min-width: 1200px) {
+    .aboutSectionTitle {
+        font-size: 70px;
+    }
+
+    .aboutCompanyDescription {
+        font-size: 25px;
+    }
+}
+
+/* Средние экраны (планшеты) */
+@media (max-width: 1199px) and (min-width: 769px) {
+    .aboutSectionTitle {
+        font-size: 50px;
+    }
+
+    .aboutCompanyDescription {
+        font-size: 22px;
+    }
+
+    .directionsGrid {
+        justify-content: space-around;
+    }
+}
+
+/* Малые экраны (мобильные) */
+@media (max-width: 768px) {
+    .aboutSectionTitle {
+        font-size: 40px;
+    }
+
+    .aboutCompanyDescription {
+        text-align: start;
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .aboutImageContainer {
+        margin-left: 0;
+    }
+
+    .aboutInfoSection {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .directionsGrid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .directionCard {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .directionIcon {
+        font-size: 30px;
+    }
+
+    .directionCardTitle {
+        font-size: 16px;
+    }
+
+    .directionCardDescription {
+        font-size: 14px;
+    }
 }
