@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
           <p>Телефон: </p>
           <p>+7 (499) 400-50-01</p>
           <p>Email: </p>
-          <p>info@fasteners.com</p>
+          <p>sale.fasteners@mail.ru</p>
           <p>Адрес: </p>
           <p>г. Москва, ул. Примерная, д. 1</p>
         </div>

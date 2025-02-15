@@ -118,9 +118,6 @@
     color: white;
 }
 
-.contact :first-child {
-    /* font-size: 22px; */
-}
 
 .copiedText {
     color: #1bc4bb;
@@ -134,6 +131,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    /* width: 226px; */
 }
 
 .heroText {

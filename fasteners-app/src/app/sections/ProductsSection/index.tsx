@@ -1,8 +1,6 @@
-'use client';
 import React, { useState } from 'react';
 import styles from './productsSection.module.css';
 import Image from 'next/image';
-// import CategorySwitcher from '@/app/shared/ui/CategorySwitcher';
 
 const ProductsSection = () => {
     const categories = ["Винты", "Винты самонарезающие", "Винты сегментные", "Болты", "Оси"];
@@ -32,31 +30,19 @@ const ProductsSection = () => {
             description: "Изготовления любого типа изделий по вашей документации.",
             image: "/images/productsImage/product4.jpg",
         },
-        // {
-        //     id: 5,
-        //     name: "Винт самонарезающий",
-        //     description: "Самонарезающие винты для различных материалов.",
-        //     image: "/images/productsImage/product5.jpg",
-        // },
     ];
 
-    const [products, setProducts] = useState(initialProducts);
 
-    const handleCategoryChange = (category: string) => {
-        // Перемешиваем продукты
-        const shuffledProducts = [...products].sort(() => Math.random() - 0.5);
-        setProducts(shuffledProducts);
-
-    };
 
     return (
         <section id="products" className={styles.productsSection}>
             <h2 className={styles.sectionTitle}>Наша продукция</h2>
-                <p className={styles.sectionDescription}>Качественный крепеж для различных отраслей промышленности.</p>
-                <p className={styles.sectionDescription}>Для ознакомления с полным каталогом продукции, пожалуйста, обратитесь к нашим менеджерам.</p>
-            {/* <CategorySwitcher categories={categories} onCategoryChange={handleCategoryChange} /> */}
+            <p className={styles.sectionDescription}>Качественный крепеж для различных отраслей промышленности.</p>
+            <p className={styles.sectionDescription}>
+                Для ознакомления с полным каталогом продукции, пожалуйста, нажмите <a href="/catalog/produkciya_ooo_skf.pdf" download>здесь</a>.
+            </p>
             <div className={styles.productsGrid}>
-                {products.map((product) => (
+                {initialProducts.map((product) => (
                     <div key={product.id} className={styles.productCard}>
                         <Image
                             src={product.image}
