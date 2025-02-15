@@ -25,7 +25,7 @@ const AboutSection = () => {
                     <div className={styles.directionCard}>
                         <div className={styles.directionIcon}>🔩</div>
                         <h4 className={styles.directionCardTitle}>Производство крепежа</h4>
-                        <p className={styles.directionCardDescription}>Производим крепеж под маркой Фастенерс.</p>
+                        <p className={styles.directionCardDescription}>Производство крепежа в кратчайшие сроки.</p>
                     </div>
                     <div className={styles.directionCard}>
                         <div className={styles.directionIcon}>📐</div>

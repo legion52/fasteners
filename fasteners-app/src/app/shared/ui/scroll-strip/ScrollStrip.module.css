@@ -1,7 +1,7 @@
 /* Размеры */
 .svgScrollContainer {
     left: 25%;
-    top: 195px;
+    top: 120px;
     overflow: hidden;
     width: 150%;
     height: 900px;
@@ -11,7 +11,7 @@
   
   .svgScrollContainerRight {
     left: 25%;
-    top: 700px;
+    top: 600px;
     overflow: hidden;
     width: 150%;
     height: 900px;

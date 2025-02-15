@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import styles from './productsSection.module.css';
 import Image from 'next/image';
-import CategorySwitcher from '@/app/shared/ui/CategorySwitcher';
+// import CategorySwitcher from '@/app/shared/ui/CategorySwitcher';
 
 const ProductsSection = () => {
     const categories = ["Винты", "Винты самонарезающие", "Винты сегментные", "Болты", "Оси"];
@@ -10,34 +10,34 @@ const ProductsSection = () => {
     const initialProducts = [
         {
             id: 1,
-            name: "Винт сегментный",
-            description: "Сегментные винты высокого качества.",
+            name: "Винт самонарезающий",
+            description: "Изготовление крепежа с необходимыми параметрами резьбы.",
             image: "/images/productsImage/product1.jpg",
         },
         {
             id: 2,
-            name: "Винт самонарезающий",
-            description: "Самонарезающие винты для различных материалов.",
+            name: "Шуруп",
+            description: "Изготовление крепежа по необходимым параметрам.",
             image: "/images/productsImage/product2.jpg",
         },
         {
             id: 3,
-            name: "Винт самонарезающий",
-            description: "Самонарезающие винты для различных материалов.",
+            name: "Винт со специальной головкой",
+            description: "Изготовление метизных изделий с необходимой головкой.",
             image: "/images/productsImage/product3.jpg",
         },
         {
             id: 4,
-            name: "Винт самонарезающий",
-            description: "Самонарезающие винты для различных материалов.",
+            name: "Прессшайба с тупым концом",
+            description: "Изготовления любого типа изделий по вашей документации.",
             image: "/images/productsImage/product4.jpg",
         },
-        {
-            id: 5,
-            name: "Винт самонарезающий",
-            description: "Самонарезающие винты для различных материалов.",
-            image: "/images/productsImage/product5.jpg",
-        },
+        // {
+        //     id: 5,
+        //     name: "Винт самонарезающий",
+        //     description: "Самонарезающие винты для различных материалов.",
+        //     image: "/images/productsImage/product5.jpg",
+        // },
     ];
 
     const [products, setProducts] = useState(initialProducts);
@@ -52,8 +52,9 @@ const ProductsSection = () => {
     return (
         <section id="products" className={styles.productsSection}>
             <h2 className={styles.sectionTitle}>Наша продукция</h2>
-            <p className={styles.sectionDescription}>Качественный крепеж для различных отраслей промышленности.</p>
-            <CategorySwitcher categories={categories} onCategoryChange={handleCategoryChange} />
+                <p className={styles.sectionDescription}>Качественный крепеж для различных отраслей промышленности.</p>
+                <p className={styles.sectionDescription}>Для ознакомления с полным каталогом продукции, пожалуйста, обратитесь к нашим менеджерам.</p>
+            {/* <CategorySwitcher categories={categories} onCategoryChange={handleCategoryChange} /> */}
             <div className={styles.productsGrid}>
                 {products.map((product) => (
                     <div key={product.id} className={styles.productCard}>

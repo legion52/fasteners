@@ -60,6 +60,7 @@
     display: flex;
     gap: 34px;
     flex-wrap: wrap;
+    margin-top: 5px;
     z-index: 10;
 }
 
@@ -104,11 +105,35 @@
     transition: color 0.3s ease;
 }
 
-.contact span {
+.contact {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    margin-top: 5px;
+
+    gap: 55px;
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
     color: white;
+}
+
+.contact :first-child {
+    /* font-size: 22px; */
+}
+
+.copiedText {
+    color: #1bc4bb;
+}
+
+.contactIcon {
+    stroke: white;
+}
+
+.contactGroup {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .heroText {

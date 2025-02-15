@@ -1,13 +1,15 @@
 'use client';
 import React, { useState } from 'react';
 import Logo from '../shared/assets/icon/logo.svg';
+import Letter from '../shared/assets/icon/markunread.svg';
+import Call from '../shared/assets/icon/call.svg';
 import MenuIcon from '../shared/assets/icon/menu.svg';
 import styles from './header.module.css';
 import ScrollStrip from '../shared/ui/scroll-strip';
 import Button from '../shared/ui/button';
 
 const Header = () => {
-    const [primary, setPrimary] = useState(true);
+    const [isCopy, setIsCopy] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const tabs = [
@@ -18,6 +20,7 @@ const Header = () => {
         { name: 'Партнеры', id: 'partners' },
     ];
 
+    const copyText = "sale.fasteners@mail.ru"
     const handleScroll = (id: string) => {
         const section = document.getElementById(id);
         if (section) {
@@ -26,11 +29,21 @@ const Header = () => {
         setIsMenuOpen(false); // Закрываем меню после перехода
     };
 
+    const handleCopy = async (e: React.MouseEvent<HTMLSpanElement>) => {
+        try {
+            await navigator.clipboard.writeText(e.currentTarget.innerText);
+            setIsCopy(true)
+            setTimeout(() => setIsCopy(false), 2000);
+        } catch (error) {
+            console.error('Failed to copy text:', error);
+        }
+    }
+
     return (
         <section id="home" className={styles.container}>
             <div className={styles.navbar}>
                 <div className={styles.logoBlock}>
-                    <Logo onClick={() => setPrimary(prev => !prev)} className={styles.logo} />
+                    <Logo className={styles.logo} />
                     <span className={styles.phoneNumber}>+7 (999) 999 99-99</span>
                     <MenuIcon onClick={() => setIsMenuOpen(prev => !prev)} className={styles.logoMenu} />
                 </div>
@@ -42,7 +55,15 @@ const Header = () => {
                     ))}
                 </div>
                 <div className={styles.contact}>
-                    <span>+7 (499) 400-50-01</span>
+                    <div className={styles.contactGroup}>
+                        <Letter />
+                        <span onClick={handleCopy} className={isCopy ? styles.copiedText : ''}>{isCopy ? 'Скопировано' : copyText}</span>
+                    </div>
+                    <div className={styles.contactGroup}>
+
+                        <Call className={styles.contactIcon} />
+                        <span>+7 (499) 400-50-01</span>
+                    </div>
                 </div>
             </div>
             <div className={styles.heroText}>

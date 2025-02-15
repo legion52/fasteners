@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
             Мы производим качественный крепеж под маркой Фастенерс с 2004 года.
           </p>
         </div>
-        
+
         {/* Навигация */}
         <div className={styles.navigation}>
           <h4>Навигация</h4>
@@ -28,16 +28,19 @@ const Footer: React.FC = () => {
             <li><a href="#contacts">Контакты</a></li>
           </ul>
         </div>
-        
+
         {/* Контактная информация */}
         <div className={styles.contactInfo}>
           <h4>Контакты</h4>
-          <p>Телефон: +7 (499) 400-50-01</p>
-          <p>Email: info@fasteners.com</p>
-          <p>Адрес: г. Москва, ул. Примерная, д. 1</p>
+          <p>Телефон: </p>
+          <p>+7 (499) 400-50-01</p>
+          <p>Email: </p>
+          <p>info@fasteners.com</p>
+          <p>Адрес: </p>
+          <p>г. Москва, ул. Примерная, д. 1</p>
         </div>
       </div>
-      
+
       {/* Политика конфиденциальности */}
       <div className={styles.footerBottom}>
         <p>&copy; 2024 Фастенерс. Все права защищены.</p>

@@ -14,7 +14,6 @@ const ContactsSection: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Отправка данных формы:', formData);
-    // Здесь можно добавить логику для отправки формы
   };
 
   return (
@@ -22,14 +21,31 @@ const ContactsSection: React.FC = () => {
       <h2 className={styles.sectionTitle}>Свяжитесь с нами</h2>
       <p className={styles.sectionDescription}>Заполните форму или воспользуйтесь контактами ниже для связи с нами.</p>
 
-      {/* Контактная информация */}
       <div className={styles.contactInfo}>
-        <p>Телефон: +7 (499) 400-50-01</p>
-        <p>Email: info@fasteners.com</p>
-        <p>Адрес: г. Москва, ул. Примерная, д. 1</p>
+        <div className={styles.contactTitle}>
+        <span>Телефон:</span>
+        <span>E-mail:</span>
+        <span>Адрес:</span>
+        </div>
+        <div className={styles.contactText}>
+        <span>+7 (499) 400-50-01</span>
+        <span>sale.fasteners@mail.ru</span>
+        <span>г. Москва, ул. Примерная, д. 1</span>
+        </div>
+        {/* <div className={styles.contactText}>
+          <span>Телефон:</span>
+          <span>+7 (499) 400-50-01</span>
+        </div>
+        <div className={styles.contactText}>
+          <span>E-mail:</span>
+          <span>sale.fasteners@mail.ru</span>
+        </div>
+        <div className={styles.contactText}>
+          <span>Адрес:</span>
+          <span>г. Москва, ул. Примерная, д. 1</span>
+        </div> */}
       </div>
 
-      {/* Форма обратной связи */}
       <form className={styles.contactForm} onSubmit={handleSubmit}>
         <input
           type="text"
@@ -66,14 +82,14 @@ const ContactsSection: React.FC = () => {
 
       {/* Карта */}
       <div className={styles.mapContainer}>
-    <iframe
-        src="https://yandex.ru/map-widget/v1/-/CDtNyPij"
-        width="100%"
-        height="300"
-        frameBorder="0"
-        title="Карта"
-    ></iframe>
-</div>
+        <iframe
+          src="https://yandex.ru/map-widget/v1/-/CDtNyPij"
+          width="100%"
+          height="300"
+          frameBorder="0"
+          title="Карта"
+        ></iframe>
+      </div>
 
     </section>
   );
